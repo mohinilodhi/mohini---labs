@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohini Lodhi | AI & Machine Learning Portfolio</title>
+    <meta name="description" content="Portfolio of Mohini Lodhi, an aspiring AI & Machine Learning Engineer and Python Developer. Explore projects, certificates, education timeline, and skills.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mohinilodhi.github.io/">
+    <meta property="og:title" content="Mohini Lodhi | AI & Machine Learning Portfolio">
+    <meta property="og:description" content="Aspiring AI & Machine Learning Engineer passionate about Python, Data Analysis, and modern AI tools.">
+    <meta property="og:image" content="assets/images/portfolio-preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mohinilodhi.github.io/">
+    <meta property="twitter:title" content="Mohini Lodhi | AI & Machine Learning Portfolio">
+    <meta property="twitter:description" content="Aspiring AI & Machine Learning Engineer passionate about Python, Data Analysis, and modern AI tools.">
+    <meta property="twitter:image" content="assets/images/portfolio-preview.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Dynamic Background Canvas -->
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+    
+    <!-- Glowing background blobs -->
+    <div class="blob blob-1" aria-hidden="true"></div>
+    <div class="blob blob-2" aria-hidden="true"></div>
+    <div class="blob blob-3" aria-hidden="true"></div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-accent">&lt;</span>Mohini<span class="logo-accent">.L /&gt;</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#profiles" class="nav-link">Profiles</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <span class="hero-subtitle">Hello, I'm</span>
+                    <h1 class="hero-title">Mohini Lodhi</h1>
+                    <div class="typing-container">
+                        <span class="typing-text" id="typing-text">Python Developer</span><span class="typing-cursor">|</span>
+                    </div>
+                    <p class="hero-description">
+                        Aspiring AI Engineer passionate about Python, Machine Learning, Data Analysis, and modern AI tools. I enjoy building practical projects, learning new technologies, and continuously improving my programming and problem-solving skills.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects <i data-lucide="arrow-right" class="btn-icon"></i></a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="neural-net-illustration">
+                        <!-- Futuristic AI Neural Network SVG Representation -->
+                        <svg viewBox="0 0 400 400" width="100%" height="100%" class="ai-svg">
+                            <!-- Connection Lines -->
+                            <g class="svg-lines">
+                                <line x1="100" y1="100" x2="200" y2="150" class="glow-line line-1" />
+                                <line x1="100" y1="200" x2="200" y2="150" class="glow-line line-2" />
+                                <line x1="100" y1="200" x2="200" y2="250" class="glow-line line-3" />
+                                <line x1="100" y1="300" x2="200" y2="250" class="glow-line line-4" />
+                                
+                                <line x1="200" y1="150" x2="300" y2="200" class="glow-line line-5" />
+                                <line x1="200" y1="250" x2="300" y2="200" class="glow-line line-6" />
+                            </g>
+                            <!-- Nodes -->
+                            <g class="svg-nodes">
+                                <!-- Layer 1 -->
+                                <circle cx="100" cy="100" r="10" class="node node-blue pulse-node-1" />
+                                <circle cx="100" cy="200" r="10" class="node node-purple pulse-node-2" />
+                                <circle cx="100" cy="300" r="10" class="node node-cyan pulse-node-3" />
+                                <!-- Layer 2 -->
+                                <circle cx="200" cy="150" r="12" class="node node-cyan pulse-node-4" />
+                                <circle cx="200" cy="250" r="12" class="node node-blue pulse-node-5" />
+                                <!-- Layer 3 (Output) -->
+                                <circle cx="300" cy="200" r="15" class="node node-purple pulse-node-6" />
+                            </g>
+                            <!-- Inner decorative icons/symbols -->
+                            <text x="94" y="204" fill="#0B1120" font-family="Poppins" font-weight="bold" font-size="12">Py</text>
+                            <text x="294" y="204" fill="#0B1120" font-family="Poppins" font-weight="bold" font-size="14">AI</text>
+                        </svg>
+                        <div class="floating-badge badge-1">
+                            <i data-lucide="code"></i>
+                            <span>Clean Code</span>
+                        </div>
+                        <div class="floating-badge badge-2">
+                            <i data-lucide="cpu"></i>
+                            <span>ML Model</span>
+                        </div>
+                        <div class="floating-badge badge-3">
+                            <i data-lucide="bar-chart-2"></i>
+                            <span>Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Overview</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-info-card glass-card">
+                        <div class="about-icon-header">
+                            <div class="about-avatar-placeholder">
+                                <i data-lucide="user" class="avatar-icon"></i>
+                            </div>
+                            <div class="about-meta">
+                                <h3>Mohini Lodhi</h3>
+                                <p>B.Tech Student (AI & ML)</p>
+                            </div>
+                        </div>
+                        <div class="about-stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-label">Current CGPA</span>
+                                <span class="stat-value">7.8</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Year of Study</span>
+                                <span class="stat-value">1st Year</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Core Tech</span>
+                                <span class="stat-value">Python</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-text-content">
+                        <h3 class="about-subheading">First Year B.Tech Student in Artificial Intelligence & Machine Learning</h3>
+                        <p class="about-paragraph">
+                            I am currently pursuing my Bachelor of Technology (B.Tech) in Artificial Intelligence & Machine Learning at the <strong>Oriental College of Technology, Bhopal</strong>. I have maintained a <strong>7.8 CGPA</strong> in my first year while diving deeply into programming and computer science foundations.
+                        </p>
+                        <p class="about-paragraph">
+                            My journey in technology is driven by a deep love for learning <strong>Python</strong> and a strong interest in AI. I am passionate about solving complex analytical problems, enjoy building practical software and ML projects, and thrive on continuously learning new technologies to keep pace with modern AI advancements.
+                        </p>
+                        
+                        <div class="career-goal-box">
+                            <div class="goal-icon">
+                                <i data-lucide="target"></i>
+                            </div>
+                            <div class="goal-text">
+                                <strong>Career Goal:</strong> To become a high-impact AI Engineer and contribute to innovative, real-world AI solutions that solve pressing global challenges.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Capabilities</span>
+                    <h2 class="section-title">My Skills</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Programming -->
+                    <div class="skill-category-card glass-card">
+                        <div class="category-header">
+                            <i data-lucide="terminal" class="category-icon text-blue"></i>
+                            <h3>Programming</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span>Python</span>
+                                    <span class="percentage">90%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill bg-blue" style="width: 0%" data-width="90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Libraries -->
+                    <div class="skill-category-card glass-card">
+                        <div class="category-header">
+                            <i data-lucide="layers" class="category-icon text-purple"></i>
+                            <h3>Libraries</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span>NumPy</span>
+                                    <span class="percentage">85%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill bg-purple" style="width: 0%" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span>Pandas</span>
+                                    <span class="percentage">80%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill bg-purple" style="width: 0%" data-width="80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span>Matplotlib</span>
+                                    <span class="percentage">75%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill bg-purple" style="width: 0%" data-width="75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span>Seaborn</span>
+                                    <span class="percentage">70%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill bg-purple" style="width: 0%" data-width="70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span>Scikit-learn</span>
+                                    <span class="percentage">75%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill bg-purple" style="width: 0%" data-width="75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Developer Tools -->
+                    <div class="skill-category-card glass-card">
+                        <div class="category-header">
+                            <i data-lucide="settings" class="category-icon text-cyan"></i>
+                            <h3>Developer Tools</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span>Git</span>
+                                    <span class="percentage">80%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill bg-cyan" style="width: 0%" data-width="80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span>GitHub</span>
+                                    <span class="percentage">85%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill bg-cyan" style="width: 0%" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span>VS Code</span>
+                                    <span class="percentage">90%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill bg-cyan" style="width: 0%" data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span>Google Colab</span>
+                                    <span class="percentage">85%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill bg-cyan" style="width: 0%" data-width="85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Tools -->
+                    <div class="skill-category-card glass-card">
+                        <div class="category-header">
+                            <i data-lucide="sparkles" class="category-icon text-blue"></i>
+                            <h3>AI & Design Tools</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span>ChatGPT</span>
+                                    <span class="percentage">90%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill bg-blue" style="width: 0%" data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span>Antigravity</span>
+                                    <span class="percentage">85%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill bg-blue" style="width: 0%" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span>Google AI Studio</span>
+                                    <span class="percentage">80%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill bg-blue" style="width: 0%" data-width="80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span>Canva</span>
+                                    <span class="percentage">80%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill bg-blue" style="width: 0%" data-width="80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Portfolio</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: Calculator -->
+                    <article class="project-card glass-card">
+                        <div class="project-image-wrapper">
+                            <div class="project-placeholder-image" style="background: linear-gradient(135deg, rgba(59,130,246,0.3) 0%, rgba(139,92,246,0.3) 100%);">
+                                <i data-lucide="calculator" class="project-icon-placeholder"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Calculator</h3>
+                            <p class="project-description">A clean, interactive calculator implementing modern layout practices and precise mathematical logic operations.</p>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">GUI</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="#" class="btn btn-sm btn-outline" onclick="event.preventDefault(); alert('GitHub repository is a placeholder and will be linked soon.');"><i data-lucide="github"></i> Code</a>
+                                <a href="#" class="btn btn-sm btn-gradient" onclick="event.preventDefault(); alert('Live Demo is currently a placeholder.');"><i data-lucide="external-link"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Rock Paper Scissors -->
+                    <article class="project-card glass-card">
+                        <div class="project-image-wrapper">
+                            <div class="project-placeholder-image" style="background: linear-gradient(135deg, rgba(34,211,238,0.3) 0%, rgba(59,130,246,0.3) 100%);">
+                                <i data-lucide="swords" class="project-icon-placeholder"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Rock Paper Scissors</h3>
+                            <p class="project-description">An interactive implementation of the classic game against AI with score tracking, randomized selections, and clean state logic.</p>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Game Logic</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="#" class="btn btn-sm btn-outline" onclick="event.preventDefault(); alert('GitHub repository is a placeholder and will be linked soon.');"><i data-lucide="github"></i> Code</a>
+                                <a href="#" class="btn btn-sm btn-gradient" onclick="event.preventDefault(); alert('Live Demo is currently a placeholder.');"><i data-lucide="external-link"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: KBC Quiz Game -->
+                    <article class="project-card glass-card">
+                        <div class="project-image-wrapper">
+                            <div class="project-placeholder-image" style="background: linear-gradient(135deg, rgba(139,92,246,0.3) 0%, rgba(34,211,238,0.3) 100%);">
+                                <i data-lucide="trophy" class="project-icon-placeholder"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">KBC Quiz Game</h3>
+                            <p class="project-description">A trivia quiz application styled after Kaun Banega Crorepati. Features multiple choice questions, levels, and reward tracking.</p>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Control Flow</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="#" class="btn btn-sm btn-outline" onclick="event.preventDefault(); alert('GitHub repository is a placeholder and will be linked soon.');"><i data-lucide="github"></i> Code</a>
+                                <a href="#" class="btn btn-sm btn-gradient" onclick="event.preventDefault(); alert('Live Demo is currently a placeholder.');"><i data-lucide="external-link"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Password Generator -->
+                    <article class="project-card glass-card">
+                        <div class="project-image-wrapper">
+                            <div class="project-placeholder-image" style="background: linear-gradient(135deg, rgba(59,130,246,0.3) 0%, rgba(139,92,246,0.3) 100%);">
+                                <i data-lucide="key-round" class="project-icon-placeholder"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Password Generator</h3>
+                            <p class="project-description">A security-focused utility generating highly customizable, random cryptographically secure passwords based on user parameters.</p>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Security</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="#" class="btn btn-sm btn-outline" onclick="event.preventDefault(); alert('GitHub repository is a placeholder and will be linked soon.');"><i data-lucide="github"></i> Code</a>
+                                <a href="#" class="btn btn-sm btn-gradient" onclick="event.preventDefault(); alert('Live Demo is currently a placeholder.');"><i data-lucide="external-link"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Student Report Card System -->
+                    <article class="project-card glass-card">
+                        <div class="project-image-wrapper">
+                            <div class="project-placeholder-image" style="background: linear-gradient(135deg, rgba(34,211,238,0.3) 0%, rgba(59,130,246,0.3) 100%);">
+                                <i data-lucide="graduation-cap" class="project-icon-placeholder"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Student Report Card System</h3>
+                            <p class="project-description">A systematic administration tool built to manage, compute, filter, and track academic records and grade-point calculations.</p>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Data Management</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="#" class="btn btn-sm btn-outline" onclick="event.preventDefault(); alert('GitHub repository is a placeholder and will be linked soon.');"><i data-lucide="github"></i> Code</a>
+                                <a href="#" class="btn btn-sm btn-gradient" onclick="event.preventDefault(); alert('Live Demo is currently a placeholder.');"><i data-lucide="external-link"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Linear Regression Prediction -->
+                    <article class="project-card glass-card">
+                        <div class="project-image-wrapper">
+                            <div class="project-placeholder-image" style="background: linear-gradient(135deg, rgba(139,92,246,0.3) 0%, rgba(34,211,238,0.3) 100%);">
+                                <i data-lucide="trending-up" class="project-icon-placeholder"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Linear Regression Prediction</h3>
+                            <p class="project-description">An ML model utilizing Scikit-learn to establish numerical trend predictions, feature evaluation, and metric evaluation plotting.</p>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag">Scikit-learn</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Matplotlib</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="#" class="btn btn-sm btn-outline" onclick="event.preventDefault(); alert('GitHub repository is a placeholder and will be linked soon.');"><i data-lucide="github"></i> Code</a>
+                                <a href="#" class="btn btn-sm btn-gradient" onclick="event.preventDefault(); alert('Live Demo is currently a placeholder.');"><i data-lucide="external-link"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 7: Titanic Dataset Analysis -->
+                    <article class="project-card glass-card">
+                        <div class="project-image-wrapper">
+                            <div class="project-placeholder-image" style="background: linear-gradient(135deg, rgba(59,130,246,0.3) 0%, rgba(139,92,246,0.3) 100%);">
+                                <i data-lucide="ship" class="project-icon-placeholder"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Titanic Dataset Analysis</h3>
+                            <p class="project-description">Exploratory Data Analysis (EDA) of the classic Titanic survival set. Evaluates demographics, variables, and correlation visualizations.</p>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Seaborn</span>
+                                <span class="tech-tag">NumPy</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="#" class="btn btn-sm btn-outline" onclick="event.preventDefault(); alert('GitHub repository is a placeholder and will be linked soon.');"><i data-lucide="github"></i> Code</a>
+                                <a href="#" class="btn btn-sm btn-gradient" onclick="event.preventDefault(); alert('Live Demo is currently a placeholder.');"><i data-lucide="external-link"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="section certificates-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Credentials</span>
+                    <h2 class="section-title">Certificates</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="certificates-grid">
+                    <!-- Certificate 1 -->
+                    <div class="certificate-card glass-card">
+                        <div class="certificate-icon-box">
+                            <i data-lucide="award" class="cert-icon text-blue"></i>
+                        </div>
+                        <div class="certificate-body">
+                            <h3 class="certificate-title">Python Certificate</h3>
+                            <p class="certificate-issuer">Issued by Simplilearn</p>
+                        </div>
+                        <div class="certificate-footer">
+                            <button class="btn btn-sm btn-outline btn-full" onclick="alert('Python Certificate image is a placeholder and will be added later.');">
+                                <i data-lucide="eye"></i> View Certificate
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 2 -->
+                    <div class="certificate-card glass-card">
+                        <div class="certificate-icon-box">
+                            <i data-lucide="award" class="cert-icon text-purple"></i>
+                        </div>
+                        <div class="certificate-body">
+                            <h3 class="certificate-title">Canva Certificate</h3>
+                            <p class="certificate-issuer">Issued by Canva Academy</p>
+                        </div>
+                        <div class="certificate-footer">
+                            <button class="btn btn-sm btn-outline btn-full" onclick="alert('Canva Certificate image is a placeholder and will be added later.');">
+                                <i data-lucide="eye"></i> View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section education-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Academy</span>
+                    <h2 class="section-title">Education</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i data-lucide="book-open"></i>
+                        </div>
+                        <div class="timeline-card glass-card">
+                            <span class="timeline-date">2025 - Present</span>
+                            <h3 class="timeline-title">Bachelor of Technology (B.Tech)</h3>
+                            <h4 class="timeline-branch text-gradient">Artificial Intelligence & Machine Learning</h4>
+                            <p class="timeline-institution">Oriental College of Technology, Bhopal</p>
+                            <div class="timeline-footer">
+                                <span class="badge">First Year</span>
+                                <span class="badge">Current CGPA: 7.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coding Profiles Section -->
+        <section id="profiles" class="section profiles-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Socials</span>
+                    <h2 class="section-title">Coding Profiles</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="profiles-grid">
+                    <!-- GitHub -->
+                    <div class="profile-card glass-card">
+                        <div class="profile-icon text-blue">
+                            <i data-lucide="github"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h3>GitHub</h3>
+                            <p>Repository workspace and codebase tracking.</p>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline profile-btn" onclick="event.preventDefault(); alert('GitHub link is a placeholder.');">
+                            Visit Profile <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+
+                    <!-- LinkedIn -->
+                    <div class="profile-card glass-card">
+                        <div class="profile-icon text-purple">
+                            <i data-lucide="linkedin"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h3>LinkedIn</h3>
+                            <p>Professional networking and career connection.</p>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline profile-btn" onclick="event.preventDefault(); alert('LinkedIn link is a placeholder.');">
+                            Visit Profile <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+
+                    <!-- CodeChef -->
+                    <div class="profile-card glass-card">
+                        <div class="profile-icon text-cyan">
+                            <i data-lucide="code-2"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h3>CodeChef</h3>
+                            <p>Competitive programming and algorithmic problem solving.</p>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline profile-btn" onclick="event.preventDefault(); alert('CodeChef link is a placeholder.');">
+                            Visit Profile <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+
+                    <!-- SoloLearn -->
+                    <div class="profile-card glass-card">
+                        <div class="profile-icon text-blue">
+                            <i data-lucide="terminal"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h3>SoloLearn</h3>
+                            <p>Interactive coding lessons and continuous skill tracks.</p>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline profile-btn" onclick="event.preventDefault(); alert('SoloLearn link is a placeholder.');">
+                            Visit Profile <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Get In Touch</span>
+                    <h2 class="section-title">Contact Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Info Panel -->
+                    <div class="contact-info glass-card">
+                        <h3 class="info-title">Let's Connect</h3>
+                        <p class="info-desc">Feel free to reach out to me for collaborative opportunities, projects, or just to chat about Python and AI!</p>
+                        
+                        <div class="info-list">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i data-lucide="mail"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:placeholder@example.com" class="contact-link">placeholder@example.com</a></p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i data-lucide="github"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>GitHub</h4>
+                                    <p><a href="https://github.com/mohinilodhi" class="contact-link" target="_blank">  View My GitHub Profile</a></p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i data-lucide="linkedin"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>LinkedIn</h4>
+                                    <p><a href="https://www.linkedin.com/in/mohini-lodhi-910b3a39b/" class="contact-link" target="_blank">    linkedin.com/in/mohini-lodhi-910b3a39b</a></p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i data-lucide="map-pin"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Location</h4>
+                                    <p>Bhopal, Madhya Pradesh, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-container glass-card">
+                        <form id="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your Name">
+                                <span class="error-msg" id="name-error">Name is required</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                                <span class="error-msg" id="email-error">Please enter a valid email address</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required placeholder="Project Discussion">
+                                <span class="error-msg" id="subject-error">Subject is required</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="How can I help you?"></textarea>
+                                <span class="error-msg" id="message-error">Message cannot be empty</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full">
+                                Send Message <i data-lucide="send" class="btn-icon"></i>
+                            </button>
+
+                            <!-- Success/Error alert box -->
+                            <div id="form-status" class="form-status" aria-live="polite"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <span class="logo footer-logo">&lt;Mohini.L /&gt;</span>
+                <p class="footer-text">Built with passion for Python, Artificial Intelligence, and continuous learning.</p>
+            </div>
+            
+            <div class="footer-socials">
+                <a href="#" class="social-icon" aria-label="GitHub" onclick="event.preventDefault(); alert('GitHub is placeholder.');"><i data-lucide="github"></i></a>
+                <a href="#" class="social-icon" aria-label="LinkedIn" onclick="event.preventDefault(); alert('LinkedIn is placeholder.');"><i data-lucide="linkedin"></i></a>
+                <a href="#" class="social-icon" aria-label="CodeChef" onclick="event.preventDefault(); alert('CodeChef is placeholder.');"><i data-lucide="code-2"></i></a>
+                <a href="#" class="social-icon" aria-label="SoloLearn" onclick="event.preventDefault(); alert('SoloLearn is placeholder.');"><i data-lucide="terminal"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mohini Lodhi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top" class="back-to-top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
